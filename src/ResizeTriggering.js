@@ -26,5 +26,4 @@
     });
     setTimeout(checkForResize, $.ResizeTriggeringInterval);
   };
-  
 })(jQuery);

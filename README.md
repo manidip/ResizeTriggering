@@ -73,3 +73,8 @@ $.ResizeTriggeringInterval = 1000; // Checks once every second
 </body>
 </html>
 ```
+
+## 99.99% Support
+Supports all major (and minor) browsers from IE7+ (all browsers supported by jQuery 1+).
+
+![](res/support.png)

@@ -20,7 +20,7 @@
         last.width != size.width ||
         last.height != size.height
       ){
-        last = size;
+        lastSize[i] = size;
         $el.trigger("resize");
       }
     });

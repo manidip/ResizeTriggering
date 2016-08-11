@@ -2,13 +2,13 @@
 <html>
 <head>
   <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
-  <script src='src/ResizeTriggering.js'></script>
+  <script src='../src/ResizeTriggering.js'></script>
   <script>
     $(function(){
       $second = $("#second");
-      $second.resizeTriggering().on("resize", function(){
+      $second.on("resize", function(){
         $("#size").html($second.width()+" x "+$second.height());
-      });
+      }).resizeTriggering();
     });
     function doIt(){
       $("#wrapper").toggleClass("doIt");

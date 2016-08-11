@@ -1,5 +1,7 @@
 # Resize Triggering
 
+> https://addui.github.io/ResizeTriggering/
+
 ```JavaScript
 $("#myElement").resizeTriggering().on("resize", function(e){
   // Code to handle resize

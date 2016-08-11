@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resize Triggering</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='./src/addFramework.css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <script src='./src/addFramework.js'></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+<body>
+  <header class='fixed'>
+    <ul>
+      <li><a href='#home' onclick='$("body, header").removeClass("mobile-menu-open");'>Home</a></li>
+      <li><a href='#download' onclick='$("body, header").removeClass("mobile-menu-open");'>Download</a></li>
+      <li><a href='#how-to-use' onclick='$("body, header").removeClass("mobile-menu-open");'>How to Use</a></li>
+      <li><a href='#settings' onclick='$("body, header").removeClass("mobile-menu-open");'>Settings</a></li>
+      <li><a href='#example' onclick='$("body, header").removeClass("mobile-menu-open");'>Example</a></li>
+      <li><a href='https://github.com/addui/ResizeTriggering'><i class="fa fa-fw fa-github" aria-hidden="true"></i> Fork on GitHub</a></li>
+    </ul>
+  </header>
+  <div id='home' style='max-width: 1024px; margin: 0 auto'>
+    <card>
+      <card-title class='primary'>Resize Triggering</card-title>
+      <blockquote>A jQuery plugin that adds the "resize" event to all elements.</blockquote>
+      <h4>Resize event for none <code>window</code> elements</h4>
+      <p>Have you ever wanted to listen for a `resize` event on an element other than `window`?
+        This plugin listens for a `resize` event on any element and then triggers the `resize` event using jQuery so any Event Listeners will be called. Simply call the plugin on the element before adding the resize Event Listener.</p>
+    </card>
+    
+    <card id='download'>
+      <card-title class='primary'>Download</card-title>
+      <li><a href='https://cdn.rawgit.com/addui/ResizeTriggering/master/src/ResizeTriggering.min.js' download='true'><i class='fa fa-minus fa-fw'></i> Minified</a></li>
+      <li><a href='https://cdn.rawgit.com/addui/ResizeTriggering/master/src/ResizeTriggering.js' download='true'><i class='fa fa-code fa-fw'></i> Unminified</a></li>
+      <li><a href='https://github.com/addui/ResizeTriggering/archive/master.zip' download='true'><i class="fa fa-fw fa-file-archive-o" aria-hidden="true"></i> Zipped Repository</a></li>
+      <li><a href='https://github.com/addui/ResizeTriggering'><i class="fa fa-fw fa-github" aria-hidden="true"></i> Fork on GitHub</a></li>
+    </card>
+    
+    <card id='how-to-use'>
+      <card-title class='primary'>How to Use</card-title>
+      <p>Using jQuery call the <code>resizeTriggering()</code> method on the element <strong>before</strong> listening for the <code>resize</code> event, and now the <code>resize</code> event will work for all elements and not just the <code>window</code>.</p>
+      <pre class=''>
+$("#myElement")<span> </span>.resizeTriggering().on("resize", function(e){
+  // Code to handle resize
+}); 
+</pre>
+    </card>
+    
+    <card id='settings'>
+      <card-title class='primary'>Check Interval</card-title>
+      <p>The plugin works by periodically checking to see if the elements size has changed. By default it checks every 16 milliseconds (60 fps), but you can adjust this value by setting the `$.ResizeTriggeringInterval` value.</p>
+      <pre>$.ResizeTriggeringInterval = 1000; // Checks once every second</pre>
+    </card>
+    
+    <card id='example' style='margin-bottom: 0;'>
+      <card-title class='primary'>Example</card-title>
+      <div style='margin-top: -32px;'><!-- Collapse Card --></div>
+    </card>
+    <div style='padding: 16px; padding-top: 0;'>
+      <p data-height="450" data-theme-id="dark" data-slug-hash="bZOrxg" data-default-tab="js,result" data-user="AddUI" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/AddUI/pen/bZOrxg/">Resize Triggering</a> by Dustin Poissant (<a href="http://codepen.io/AddUI">@AddUI</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+      <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    </div>
+  </div>
+</body>
+</html>
